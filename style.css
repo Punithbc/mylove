@@ -1,99 +1,269 @@
+:root {
+    color-scheme: light;
+    font-family: 'DM Sans', sans-serif;
+    color: #49353e;
+    background: #fff7f5;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Merriweather', serif;
+    min-width: 320px;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: #f0f8ff;
-    color: #333;
+    background:
+        radial-gradient(ellipse at 12% 15%, rgba(255, 222, 214, 0.68), transparent 31rem),
+        radial-gradient(ellipse at 90% 85%, rgba(245, 224, 236, 0.7), transparent 28rem),
+        #fff9f7;
+}
+
+.birthday-page {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    padding: 48px 24px 28px;
+}
+
+.birthday-card {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    width: min(100%, 1060px);
+    min-height: 570px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(142, 93, 113, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 28px 80px rgba(91, 54, 70, 0.12);
+}
+
+.birthday-copy {
+    align-self: center;
+    padding: 76px 64px 72px 72px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0 0 23px;
+    color: #a15f76;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.eyebrow span {
+    color: #ce9a61;
+    font-size: 0.9rem;
+}
+
+h1 {
+    margin: 0;
+    color: #553849;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3.25rem, 6vw, 5.4rem);
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 1.04;
+}
+
+h1 span {
+    color: #b16d83;
+    font-weight: 500;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 26px 0 24px;
+}
+
+.title-decoration span {
+    width: 6px;
+    height: 6px;
+    background: #d3a16d;
+    border-radius: 50%;
+}
+
+.title-decoration span:first-child {
+    width: 38px;
+    height: 1px;
+    border-radius: 0;
+}
+
+.birthday-message {
+    max-width: 470px;
+    margin: 0;
+    color: #75636a;
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.signoff {
+    margin: 28px 0 0;
+    color: #8f536a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.16rem;
+    font-weight: 600;
+}
+
+.signoff span,
+.page-footer span {
+    padding-left: 5px;
+    color: #cc8292;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85em;
+}
+
+.birthday-art {
+    position: relative;
+    display: grid;
+    min-height: 100%;
+    place-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 62%),
+        linear-gradient(145deg, #f8e9e6, #f3e4ec 58%, #f6e8dc);
+}
+
+.birthday-art::before,
+.birthday-art::after {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(177, 109, 131, 0.17);
+    border-radius: 50%;
+    content: '';
+}
+
+.birthday-art::before {
+    transform: scale(1.3);
+}
+
+.birthday-art::after {
+    transform: scale(1.65);
+}
+
+.birthday-art img {
+    z-index: 1;
+    display: block;
+    width: min(90%, 420px);
+    max-height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 22px rgba(99, 61, 77, 0.12));
+}
+
+.art-label {
+    position: absolute;
+    z-index: 2;
+    top: 28px;
+    padding: 10px 16px;
+    color: #89566a;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(142, 93, 113, 0.12);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.art-sparkle {
+    position: absolute;
+    z-index: 2;
+    color: #bd8d57;
+}
+
+.sparkle-one {
+    top: 23%;
+    left: 14%;
+    font-size: 2rem;
+}
+
+.sparkle-two {
+    top: 39%;
+    right: 12%;
+    font-size: 1.5rem;
+}
+
+.sparkle-three {
+    right: 20%;
+    bottom: 17%;
+    font-size: 2.2rem;
+}
+
+.page-footer {
+    margin: 20px 0 0;
+    color: #967b84;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
     text-align: center;
 }
 
-.top-container {
-    position: relative;
-    padding: 20px;
-}
-
-.title {
-    font-family: 'Sacramento', cursive;
-    font-size: 3em;
-    color: #ff4500;
-    margin-bottom: 20px;
-}
-
-.poem-container {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    font-size: 1.2em;
-    line-height: 1.8em;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.author_name {
-    margin-top: 20px;
-    font-family: 'Cedarville Cursive', cursive;
-    font-size: 1.5em;
-    color: #008080;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.angel-pic {
-    width: 150px; /* Smaller size for better mobile view */
-    height: auto;
-    margin: 20px auto;
-    display: block;
-}
-
-.mountain-pic {
-    width: 90%; /* Smaller size for mobile screens */
-    height: auto;
-    margin: 20px auto;
-    opacity: 0.9;
-}
-
-.top-cloud, .bottom-cloud, .bird {
-    position: absolute;
-    width: 120px;
-    opacity: 0.8;
-}
-
-.top-cloud {
-    top: 10px;
-    left: 20px;
-}
-
-.bottom-cloud {
-    bottom: 10px;
-    left: 40px;
-}
-
-.bird {
-    top: 50px;
-    right: 20px;
-}
-
-/* Media query for mobile screens */
-@media (max-width: 768px) {
-    .title {
-        font-size: 2.5em;
+@media (max-width: 760px) {
+    .birthday-page {
+        padding: 24px 16px;
     }
 
-    .poem-container {
-        font-size: 1em;
-        padding: 15px;
+    .birthday-card {
+        grid-template-columns: 1fr;
+        width: min(100%, 520px);
+        border-radius: 22px;
     }
 
-    .angel-pic {
-        width: 150px;
+    .birthday-copy {
+        padding: 44px 32px 36px;
     }
 
+    .eyebrow {
+        margin-bottom: 18px;
+        font-size: 0.63rem;
+    }
 
-    .top-cloud, .bottom-cloud, .bird {
-        width: 100px;
+    h1 {
+        font-size: clamp(3.1rem, 13vw, 4.4rem);
+    }
+
+    .birthday-message {
+        font-size: 0.95rem;
+    }
+
+    .birthday-art {
+        min-height: 350px;
+    }
+
+    .birthday-art img {
+        width: min(78%, 300px);
+        max-height: 370px;
+    }
+
+    .art-label {
+        top: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .birthday-card {
+        animation: card-arrive 700ms ease-out both;
+    }
+
+    @keyframes card-arrive {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
